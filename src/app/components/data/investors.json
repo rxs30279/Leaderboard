@@ -1,0 +1,239 @@
+{"stocks" :[
+    
+      {
+        "symbol": "AAL.L",
+        "owners": "Les",
+        "holding": 0.296298569
+      },
+      {
+        "symbol": "AVCT.L",
+        "owners": "Peter",
+        "holding": 6.535934959
+
+      },
+      {
+        "symbol": "BYIT.L",
+        "owners": "Richard",
+        "holding": 2.535497835
+
+      },
+      {
+        "symbol": "CCL.L",
+        "owners": "Patti",
+        "holding": 1.280394254
+
+      },
+      {
+        "symbol": "CCL.L",
+        "owners": "Alan",
+        "holding": 1.280394254
+
+      },
+      {
+        "symbol": "CEY.L",
+        "owners": "Graham",
+        "holding": 9.199612778
+
+      },
+      {
+        "symbol": "CLX.L",
+        "owners": "Graham",
+        "holding": 6.329140271
+
+      },
+      {
+        "symbol": "CPH2.L",
+        "owners": "Richard",
+        "holding": 41.66647887
+
+      },
+      {
+        "symbol": "CRW.L",
+        "owners": "Richard",
+        "holding": 0.7042
+
+      },
+      {
+        "symbol": "CVSG.L",
+        "owners":   "Patti",
+        "holding": 0.4965
+
+
+      },
+      {
+        "symbol": "CWR.L",
+        "owners":   "Adrian",
+        "holding": 2.107498569
+
+      },
+      {
+        "symbol": "DRX.L",
+        "owners":   "Peter",
+        "holding": 1.540803685
+
+      },
+      {
+        "symbol": "FORT.L",
+        "owners":   "Chris",
+        "holding":  4.555791107
+
+      },
+      {
+        "symbol": "GAW.L",
+        "owners":   "Peter",
+        "holding": 0.1075
+
+      },
+      {
+        "symbol": "GLEN.L",
+        "owners":   "Les",
+        "holding": 1.85010661
+
+      },
+      {
+        "symbol": "HL.L",
+        "owners":   "Les",
+        "holding": 1.135305106
+
+      },
+      {
+        "symbol": "IAG.L",
+        "owners":   "Adrian",
+        "holding": 5.95241538
+
+      },
+      {
+        "symbol": "ITV.L",
+        "owners":   "Peter",
+        "holding": 12.05694479
+
+      },
+      {
+        "symbol": "KAPE.L",
+        "owners":   "Chris",
+        "holding":  3.921602787
+
+      },
+      {
+        "symbol": "KMR.L",
+        "owners":   "Chris",
+        "holding": 2.10969697
+
+      },
+      {
+        "symbol": "LLOY.L",
+        "owners":   "Adrian",
+        "holding": 18.98257261
+
+      },
+      {
+        "symbol": "LLOY.L",
+        "owners":   "Peter",
+        "holding": 18.98257261
+
+      },
+      {
+        "symbol": "LLOY.L",
+        "owners":   "Patti",
+        "holding": 18.98257261
+
+      },
+      {
+        "symbol": "OCDO.L",
+        "owners":   "Patti",
+        "holding": 1.366092637
+
+      },
+      {
+        "symbol": "OXB.L",
+        "owners":   "Graham",
+        "holding": 2.352903226
+
+      },
+      {
+        "symbol": "PMI.L",
+        "owners":   "Graham",
+        "holding": 8.474644809
+
+      },
+      {
+        "symbol": "PMI.L",
+        "owners":  "Chris",
+        "holding": 8.474644809
+
+      },
+      {
+        "symbol": "PSN.L",
+        "owners":   "Chris",
+        "holding": 0.704703196
+ 
+      },
+      {
+        "symbol": "RR.L",
+        "owners":   "Adrian",
+        "holding":  9.473298429
+ 
+      },
+      {
+        "symbol": "SCT.L",
+        "owners":   "Patti",
+        "holding":  0.829199701
+ 
+      },
+      {
+        "symbol": "SDP.L",
+        "owners":   "Alan",
+        "holding":  1.845010101
+
+      },
+      {
+        "symbol": "SGE.L",
+        "owners":   "Les",
+        "holding": 1.282103591
+
+      },
+      {
+        "symbol": "SHOE.L",
+        "owners":   "Graham",
+        "holding":  4.166694737
+
+      },
+      {
+        "symbol": "SMDS.L",
+        "owners":   "Adrian",
+        "holding": 2.798000645
+
+      },
+      {
+        "symbol": "SMT.L",
+        "owners":   "Alan",
+        "holding": 1.332299618
+
+      },
+      {
+        "symbol": "SOM.L",
+        "owners":   "Richard",
+        "holding": 2.531604938
+
+      },
+      {
+        "symbol": "STAN.L",
+        "owners":   "Alan",
+        "holding": 1.459898154
+
+      },
+      {
+        "symbol": "WBI.L",
+        "owners":   "Alan",
+        "holding": 645.15
+  
+      },
+      {
+        "symbol": "WOSG.L",
+        "owners":   "Richard",
+        "holding": 1.030895971
+
+      }
+       
+  
+]}
