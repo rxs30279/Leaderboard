@@ -8,8 +8,8 @@ import Calc from "./components/calculate";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Calc />
-    </div>
+    </>
   );
 }

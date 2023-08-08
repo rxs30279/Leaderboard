@@ -78,7 +78,7 @@ export default function UserPanel(props) {
             </div>
             <div className={styles.right_scorecard_wrapper}>
               <div className={styles.right_scorecard}>
-                <div>
+                <div className={styles.coin}>
                   <Image
                     src={coin}
                     alt="Universal coin img"

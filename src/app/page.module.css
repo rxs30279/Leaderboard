@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
   width: 100vw;
 }
@@ -11,43 +10,38 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  flex: 1;
   background: rgba(4, 130, 255, 0.9);
-  height: 53rem;
-  width: 26rem;
 }
 .header_leaderboard {
-  width: 426px;
-  height: 84px;
+  /* width: 426px;
+  height: 84px; */
   margin-top: 1.81rem;
   z-index: 100;
 }
-.polygon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  clip-path: polygon(0% 0%, 100% 0, 100% 92%, 50% 97%, 0 92%);
-  width: 24rem;
-  height: 49rem;
-  background-color: #344a99;
-  margin-top: -13%;
-  margin-bottom: 1.5%;
-  border-radius: 5px;
-}
+
 .inner_container {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 23.4rem;
-  height: 48rem;
-  /* margin-top: -0.45%; */
+  /* justify-content: flex-end; */
+  width: 350px;
+  height: 100%;
+  /* margin-top: -11%; */
   background-color: #2b95fe;
-
-  clip-path: polygon(0% 0%, 100% 0, 100% 92%, 50% 97%, 0 92%);
+  border: 6px solid #344a99;
 }
 .stars {
-  margin-top: 3rem;
+  margin-top: 0.5rem;
+  padding: 0 1rem 0 1 rem;
+}
+/* .starburst_container {
+  position: relative;
+} */
+.starburst {
+  margin-top: 120px;
+  opacity: 0.7;
 }
 
 .scorecard_container {
@@ -58,6 +52,8 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
   margin-top: 1rem;
+  flex: 1;
+  z-index: 100;
 }
 .scorecard_container::-webkit-scrollbar {
   display: none;
@@ -67,7 +63,7 @@
   /* position: absolute; */
   display: flex;
   height: 4.94rem;
-  width: 21.5rem;
+  width: 18.5rem;
   color: white;
   background-color: #006edd;
   justify-content: space-between;
@@ -78,11 +74,12 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .left_scorecard_scoreball {
   margin-left: 5px;
   margin-right: -10px;
+  padding-top: 12px;
 }
 .left_scorecard_name {
   margin-left: -7px;
@@ -91,19 +88,19 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
 .right_scorecard {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  width: 8.125rem;
+  width: 7.125rem;
   height: 2.57781rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: #004d93;
 }
-.right_scorecard img {
+.coin {
   padding-top: 8px;
 }
 .scores_on_doors {
