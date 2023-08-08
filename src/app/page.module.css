@@ -10,38 +10,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
   background: rgba(4, 130, 255, 0.9);
+  height: 100vh;
 }
 .header_leaderboard {
-  /* width: 426px;
-  height: 84px; */
   margin-top: 1.81rem;
-  z-index: 100;
 }
 
 .inner_container {
-  /* position: absolute; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: flex-end; */
   width: 350px;
-  height: 100%;
-  /* margin-top: -11%; */
+  height: 83vh;
   background-color: #2b95fe;
   border: 6px solid #344a99;
 }
 .stars {
   margin-top: 0.5rem;
   padding: 0 1rem 0 1 rem;
-}
-/* .starburst_container {
-  position: relative;
-} */
-.starburst {
-  margin-top: 120px;
-  opacity: 0.7;
 }
 
 .scorecard_container {
@@ -53,7 +40,6 @@
   scrollbar-width: none; /* Firefox */
   margin-top: 1rem;
   flex: 1;
-  z-index: 100;
 }
 .scorecard_container::-webkit-scrollbar {
   display: none;
@@ -104,10 +90,38 @@
   padding-top: 8px;
 }
 .scores_on_doors {
-  padding-right: 9px;
+  /* padding-right: 9px; */
   width: 100%;
 }
 .play_button {
   z-index: 1;
   /* padding-bottom: 9rem; */
+}
+
+@media screen and (min-width: 400px) {
+  .left_scorecard {
+    font-size: 1.8rem;
+  }
+  .inner_container {
+    width: 390px;
+  }
+  .scorecard {
+    width: 20.5rem;
+  }
+  .right_scorecard_wrapper {
+    margin-right: 1rem;
+  }
+  .right_scorecard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 8.125rem;
+    height: 2.57781rem;
+    font-size: 1.8rem;
+  }
+  .scores_on_doors {
+    padding-right: 0px;
+    width: 100%;
+  }
 }

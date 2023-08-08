@@ -10,11 +10,12 @@ import position_marker_7 from "./images/Position_marker_7.svg";
 import position_marker_8 from "./images/Position_marker_8.svg";
 import adrianAvatar from "./images/adrianAvatar.svg";
 import alanAvatar from "./images/alanAvatar.svg";
-//import grahamAvatar from "./images/grahamAvatar.svg";
+import grahamAvatar from "./images/grahamAvatar.svg";
 import pattiAvatar from "./images/pattiAvatar.svg";
 import lesAvatar from "./images/lesAvatar.svg";
-//import richardAvatar from "./images/alanAvatar.svg";
-//import chrisAvatar from "./images/alanAvatar.svg";
+import richardAvatar from "./images/richardAvatar.png";
+import chrisAvatar from "./images/chrisAvatar.png";
+import peterAvatar from "./images/peterAvatar.png";
 import coin from "./images/coin.svg";
 
 export default function UserPanel(props) {
@@ -28,12 +29,12 @@ export default function UserPanel(props) {
   const ownerImageMap = {
     Adrian: adrianAvatar,
     Alan: alanAvatar,
-    Chris: alanAvatar,
-    Graham: alanAvatar,
+    Chris: chrisAvatar,
+    Graham: grahamAvatar,
     Les: lesAvatar,
     Patti: pattiAvatar,
-    Peter: alanAvatar,
-    Richard: alanAvatar,
+    Peter: peterAvatar,
+    Richard: richardAvatar,
   };
 
   // build an array of position marker images
