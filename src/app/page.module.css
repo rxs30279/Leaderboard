@@ -12,23 +12,31 @@
   align-items: center;
   background: rgba(4, 130, 255, 0.9);
   height: 100vh;
+  width: 100vw;
 }
 .header_leaderboard {
+  position: fixed;
   margin-top: 1.81rem;
+  z-index: 100;
 }
 
 .inner_container {
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 350px;
-  height: 83vh;
+  height: 88vh;
   background-color: #2b95fe;
   border: 6px solid #344a99;
+  margin-top: 4rem;
 }
 .stars {
-  margin-top: 0.5rem;
-  padding: 0 1rem 0 1 rem;
+  position: fixed;
+  margin-top: 3rem;
+}
+.starburst {
+  z-index: 10;
 }
 
 .scorecard_container {
@@ -38,8 +46,10 @@
   overflow-y: auto;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  margin-top: 1rem;
+  margin-top: 12rem;
   flex: 1;
+  z-index: 20;
+  scroll-snap-type: y mandatory;
 }
 .scorecard_container::-webkit-scrollbar {
   display: none;
@@ -55,6 +65,7 @@
   justify-content: space-between;
   z-index: 100;
   border-radius: 5px;
+  scroll-snap-align: start;
 }
 .left_scorecard {
   display: flex;

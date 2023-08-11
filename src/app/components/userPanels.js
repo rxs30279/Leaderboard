@@ -1,5 +1,7 @@
+"use client";
 import styles from "../page.module.css";
 import Image from "next/image";
+import { useState } from "react";
 import position_marker_1 from "./images/Position_marker_1.svg";
 import position_marker_2 from "./images/Position_marker_2.svg";
 import position_marker_3 from "./images/Position_marker_3.svg";
@@ -20,6 +22,11 @@ import coin from "./images/coin.svg";
 
 export default function UserPanel(props) {
   const { currentValues } = props;
+  const [submitted, setSubmit] = useState(false);
+  const handleOnClick = (userIndex) => {
+    setSubmit(true);
+    console.log(submitted, userIndex);
+  };
 
   const sortedValues = currentValues.sort(
     (a, b) => b.totalValue - a.totalValue
@@ -55,11 +62,14 @@ export default function UserPanel(props) {
     return positionMarkerImages[imageIndex];
   };
 
-  return (
+  return !submitted ? (
     <>
       {sortedValues.map((users, userIndex) => (
         <section key={userIndex}>
-          <div className={styles.scorecard}>
+          <div
+            className={styles.scorecard}
+            onClick={() => handleOnClick(userIndex)}
+          >
             <div className={styles.left_scorecard}>
               <div className={styles.left_scorecard_scoreball}>
                 <Image
@@ -96,5 +106,7 @@ export default function UserPanel(props) {
         </section>
       ))}
     </>
+  ) : (
+    <div></div>
   );
 }

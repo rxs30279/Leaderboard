@@ -1,4 +1,3 @@
-"use client";
 // import Image from "next/image";
 // import styles from "./page.module.css";
 // import PlotlyComponent from "./components/plotly";
@@ -7,9 +6,5 @@
 import Calc from "./components/calculate";
 
 export default function Home() {
-  return (
-    <>
-      <Calc />
-    </>
-  );
+  return <Calc />;
 }

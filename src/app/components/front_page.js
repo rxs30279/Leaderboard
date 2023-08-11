@@ -13,15 +13,21 @@ export default function Front({ currentValues }) {
       <div className={styles.container}>
         <div className={styles.header_leaderboard}>
           <Image
+            priority
             src={leaderboard}
             alt="Leaderboard header"
             width={426}
             height={84}
           />
         </div>
-
+        {/* <Image
+          className={styles.starburst}
+          fill
+          src={starburst}
+          alt="Starburst"
+        /> */}
         <div className={styles.inner_container}>
-          <Image src={starConstellation} alt="Stars" />
+          <Image className={styles.stars} src={starConstellation} alt="Stars" />
 
           <div className={styles.scorecard_container}>
             <UserPanel currentValues={currentValues} />

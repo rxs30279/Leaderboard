@@ -2,9 +2,12 @@ import data from "./data/APIdata";
 import investors from "./data/investors";
 import Front from "./front_page";
 
-const Calc = () => {
+export default async function Calc() {
   //Extract the price data for each stock
-  const stockPrices = data.quoteResponse.result.map((entry) => {
+
+  const dataAPI = await yahooAPI();
+
+  const stockPrices = dataAPI.quoteResponse.result.map((entry) => {
     return {
       symbol: entry.symbol,
       price: entry.regularMarketPrice,
@@ -44,6 +47,45 @@ const Calc = () => {
   }
   console.log(calculatedHoldings);
 
-  return <Front currentValues={calculatedHoldings} />;
-};
-export default Calc;
+  return (
+    <>
+      <Front currentValues={calculatedHoldings} />;
+    </>
+  );
+}
+
+// API section
+
+async function yahooAPI() {
+  const apiKeys = [
+    "aXCON862Qc449MKr3fohA6lB0Ii4JyVg17SrtNia",
+    "p544cXGO7QaS0xQ7yvbBj1BMnEBNO09a2rS6zR74",
+    "lNN6AVienL3zYBX3EOmx3KqK07WEHHe4LwlxMNWf",
+  ];
+
+  const url =
+    "https://yfapi.net/v6/finance/quote?region=GB&lang=en&symbols=GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L%2CIAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L";
+  for (const apiKey of apiKeys) {
+    const options = {
+      method: "GET",
+      headers: {
+        "x-api-key": apiKey,
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        return result;
+      } else {
+        console.error(`API request failed with status: ${response.status}`);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  console.error("All API keys failed. Unable to get a successful response.");
+}
