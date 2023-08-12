@@ -6,14 +6,17 @@ export default async function Calc() {
   //Extract the price data for each stock
 
   const dataAPI = await yahooAPI();
-
+  console.log(dataAPI.quoteResponse.result[0]);
   const stockPrices = dataAPI.quoteResponse.result.map((entry) => {
     return {
       symbol: entry.symbol,
       price: entry.regularMarketPrice,
+      fiftyTwoWeekLow: entry.fiftyTwoWeekLow,
+      fiftyTwoWeekHigh: entry.fiftyTwoWeekHigh,
+      shortName: entry.shortName,
     };
   });
-  console.log(stockPrices);
+  // console.log(stockPrices);
 
   // Use the investors file to identify which stocks are associated with wich investor/
   const ownersData = {};
@@ -24,7 +27,7 @@ export default async function Calc() {
     }
     ownersData[owners].push({ symbol, holding });
   });
-  console.log(ownersData);
+  // console.log(ownersData);
 
   // Calculate holdings value for each individual
   const calculatedHoldings = [];
@@ -45,11 +48,13 @@ export default async function Calc() {
     }, 0);
     calculatedHoldings.push({ owner, totalValue });
   }
-  console.log(calculatedHoldings);
-
+  // console.log(calculatedHoldings);
+  const sortedValues = calculatedHoldings.sort(
+    (a, b) => b.totalValue - a.totalValue
+  );
   return (
     <>
-      <Front currentValues={calculatedHoldings} />;
+      <Front sortedValues={sortedValues} stockPrices={stockPrices} />
     </>
   );
 }
@@ -58,9 +63,9 @@ export default async function Calc() {
 
 async function yahooAPI() {
   const apiKeys = [
-    "aXCON862Qc449MKr3fohA6lB0Ii4JyVg17SrtNia",
-    "p544cXGO7QaS0xQ7yvbBj1BMnEBNO09a2rS6zR74",
-    "lNN6AVienL3zYBX3EOmx3KqK07WEHHe4LwlxMNWf",
+    "aXCON862Qc449MKr3fohA6lB0Ii4JyVg17SrtNia", //mesi
+    "p544cXGO7QaS0xQ7yvbBj1BMnEBNO09a2rS6zR74", //hotmail
+    "lNN6AVienL3zYBX3EOmx3KqK07WEHHe4LwlxMNWf", //googlemail
   ];
 
   const url =
@@ -77,15 +82,17 @@ async function yahooAPI() {
       const response = await fetch(url, options);
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
+        // console.log(result);
         return result;
       } else {
-        console.error(`API request failed with status: ${response.status}`);
+        console.error(
+          `API request failed with status: ${response.status} for this key: ${options}`
+        );
       }
     } catch (error) {
       console.log(error);
     }
   }
 
-  console.error("All API keys failed. Unable to get a successful response.");
+  alert("All API keys failed. Unable to get a successful response.");
 }

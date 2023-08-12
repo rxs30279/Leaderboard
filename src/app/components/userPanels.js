@@ -1,7 +1,10 @@
 "use client";
 import styles from "../page.module.css";
 import Image from "next/image";
-import { useState } from "react";
+
+import Graphs from "./graph";
+
+// Images
 import position_marker_1 from "./images/Position_marker_1.svg";
 import position_marker_2 from "./images/Position_marker_2.svg";
 import position_marker_3 from "./images/Position_marker_3.svg";
@@ -21,16 +24,12 @@ import peterAvatar from "./images/peterAvatar.png";
 import coin from "./images/coin.svg";
 
 export default function UserPanel(props) {
-  const { currentValues } = props;
-  const [submitted, setSubmit] = useState(false);
-  const handleOnClick = (userIndex) => {
-    setSubmit(true);
-    console.log(submitted, userIndex);
-  };
+  const { sortedValues, stockPrices, onSubmittedChange } = props;
 
-  const sortedValues = currentValues.sort(
-    (a, b) => b.totalValue - a.totalValue
-  );
+  const handleOnClick = (userIndex) => {
+    console.log("Button clicked in Userpanel");
+    onSubmittedChange(userIndex);
+  };
 
   //build an array to map avatars to 'owners'
   const ownerImageMap = {
@@ -57,12 +56,12 @@ export default function UserPanel(props) {
       position_marker_7,
       position_marker_8,
     ];
-    const avatars = [];
+    // const avatars = [];
     const imageIndex = userIndex % positionMarkerImages.length;
     return positionMarkerImages[imageIndex];
   };
 
-  return !submitted ? (
+  return (
     <>
       {sortedValues.map((users, userIndex) => (
         <section key={userIndex}>
@@ -73,6 +72,7 @@ export default function UserPanel(props) {
             <div className={styles.left_scorecard}>
               <div className={styles.left_scorecard_scoreball}>
                 <Image
+                  priority
                   src={getPositionMarkerImage(userIndex)}
                   alt="Position round numbered marker"
                   width={35}
@@ -80,6 +80,7 @@ export default function UserPanel(props) {
                 />
               </div>
               <Image
+                priority
                 src={ownerImageMap[users.owner]}
                 alt="Individual's Avatar"
                 width={80}
@@ -106,7 +107,5 @@ export default function UserPanel(props) {
         </section>
       ))}
     </>
-  ) : (
-    <div></div>
   );
 }
