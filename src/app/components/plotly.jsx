@@ -1,6 +1,9 @@
 
-import Plot from 'react-plotly.js';
-import styles from "../page.module.css";
+"use client"
+import dynamic from 'next/dynamic';
+import React from 'react';
+// import Plot from 'react-plotly.js';
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
 
 function PlotlyComponent(props) {
     const {combinedArray} = props;
@@ -19,7 +22,7 @@ function PlotlyComponent(props) {
 
     return (
         <div className={'styles.graph_container'} >
-             <Plot 
+             <Plot
              config={{displayModeBar: false}}
         data={data}
        layout={ {   margin: {
