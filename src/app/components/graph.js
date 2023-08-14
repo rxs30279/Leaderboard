@@ -2,7 +2,7 @@ import styles from "../page.module.css";
 import Image from "next/image";
 import investors from "./data/investors";
 import blank_leaderboard from "./images/blank_leaderboard.svg";
-import Plots from "./plotly.jsx";
+import Chart from "./chart";
 
 const Graphs = (props) => {
   const { sortedValues, stockPrices, user } = props;
@@ -33,15 +33,16 @@ const Graphs = (props) => {
   return (
     <div className={styles.outer_container}>
       <div className={styles.container}>
-        <div className={styles.inner_container}>
+        <div className={styles.graph_inner_container}>
           <div className={styles.leaderboard_name}>
             {sortedValues[user - 1].owner}
           </div>
           <div className={styles.graph_header_leaderboard}>
             <Image priority src={blank_leaderboard} alt="Leaderboard header" />
           </div>
-          <Plots combinedArray={combinedArray} />
-
+          <div className={styles.graph_wrapper}>
+            <Chart combinedArray={combinedArray} />
+          </div>
           <table className={styles.table_pricing_data}>
             <thead>
               <tr>

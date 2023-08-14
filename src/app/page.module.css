@@ -107,31 +107,55 @@
 }
 
 /* Second page */
+.graph_inner_container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  height: 88vh;
+  background-color: #2b95fe;
+  border: 6px solid #344a99;
+  margin-top: 4rem;
+}
+
 .graph_header_leaderboard {
   position: fixed;
   margin-top: -2.5rem;
   z-index: 100;
 }
 .leaderboard_name {
+  height: 30px;
+  width: auto;
   color: white;
   font-size: 36px;
-  z-index: 110;
+  z-index: 210;
   margin-top: -1.8rem;
 }
 /* Graph */
-.graph_container {
-  z-index: 0;
+.graph_wrapper {
+  z-index: 100;
+  width: 100%;
+  height: 60%;
+  margin-top: 3rem;
 }
 
 /* Table */
 .table_pricing_data {
   table-layout: fixed;
   width: 95%;
+  height: 30%;
   border-collapse: collapse;
   border: 1px solid rgb(227, 231, 233);
   box-shadow: 1px 1px 2px rgb(215, 223, 240);
-  margin-top: 2rem;
   color: white;
+  overflow-y: scroll;
+  display: block;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.table_pricing_data::-webkit-scrollbar {
+  display: none;
 }
 .table_pricing_data thead {
   background-color: #1a84ee;
