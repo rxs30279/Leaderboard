@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Bubblegum_Sans } from "next/font/google";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const Bubblegum = Bubblegum_Sans({ subsets: ["latin"], weight: ["400"] });
 
@@ -11,7 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={Bubblegum.className}>
-      <body suppressHydrationWarning={true}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics ga_id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
+        {children}
+      </body>
     </html>
   );
 }
