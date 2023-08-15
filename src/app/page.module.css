@@ -124,14 +124,30 @@
   margin-top: -2.5rem;
   z-index: 100;
 }
-.leaderboard_name {
+.header_arrow_text_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   height: 30px;
-  width: auto;
+  width: 290px;
+  margin-top: -1.2rem;
+  z-index: 210;
+}
+.left_arrow_container {
+  flex: 0 0 auto;
+  z-index: 230;
+}
+.centered_container {
+  flex: 1;
+  text-align: center;
+}
+.leaderboard_name {
   color: white;
   font-size: 36px;
   z-index: 210;
-  margin-top: -1.8rem;
+  margin-left: -20px;
 }
+
 /* Graph */
 .graph_wrapper {
   z-index: 100;

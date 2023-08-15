@@ -1,6 +1,5 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-
 import Graphs from "./graph";
 
 // Images

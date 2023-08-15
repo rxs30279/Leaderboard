@@ -6,7 +6,7 @@ export default async function Calc() {
   //Extract the price data for each stock
 
   const dataAPI = await yahooAPI();
-  console.log(dataAPI.quoteResponse.result[0]);
+  // console.log(dataAPI.quoteResponse.result[0]);
   const stockPrices = dataAPI.quoteResponse.result.map((entry) => {
     return {
       symbol: entry.symbol,
@@ -62,11 +62,8 @@ export default async function Calc() {
 // API section
 
 async function yahooAPI() {
-  const apiKeys = [
-    "aXCON862Qc449MKr3fohA6lB0Ii4JyVg17SrtNia", //mesi
-    "p544cXGO7QaS0xQ7yvbBj1BMnEBNO09a2rS6zR74", //hotmail
-    "lNN6AVienL3zYBX3EOmx3KqK07WEHHe4LwlxMNWf", //googlemail
-  ];
+  console.log("API_KEYS:", process.env.API_KEYS);
+  const apiKeys = process.env.API_KEYS.split(",");
 
   const url =
     "https://yfapi.net/v6/finance/quote?region=GB&lang=en&symbols=GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L%2CIAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L";
@@ -94,5 +91,5 @@ async function yahooAPI() {
     }
   }
 
-  alert("All API keys failed. Unable to get a successful response.");
+  console.log("All API keys failed. Unable to get a successful response.");
 }

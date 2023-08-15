@@ -17,7 +17,9 @@ export default function Front(props) {
   const handleSubmittedChange = (value) => {
     setSubmitted(value + 1);
   };
-  //console.log(sortedValues);
+  const onArrowClickFunc = () => {
+    setSubmitted(false);
+  };
 
   return !submitted ? (
     <div className={styles.outer_container}>
@@ -60,6 +62,7 @@ export default function Front(props) {
       sortedValues={sortedValues}
       stockPrices={stockPrices}
       user={submitted}
+      onArrowClick={onArrowClickFunc}
     />
   );
 }

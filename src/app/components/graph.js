@@ -1,11 +1,17 @@
+import { useState } from "react";
 import styles from "../page.module.css";
 import Image from "next/image";
 import investors from "./data/investors";
 import blank_leaderboard from "./images/blank_leaderboard.svg";
+import left_arrow from "./images/left_arrow.svg";
 import Chart from "./chart";
 
 const Graphs = (props) => {
-  const { sortedValues, stockPrices, user } = props;
+  const { sortedValues, stockPrices, user, onArrowClick } = props;
+
+  const handleLeftArrowClick = () => {
+    onArrowClick(false);
+  };
 
   // From the static file get this users list of company holdings
   const ownersStock = investors.stocks.filter(
@@ -34,8 +40,18 @@ const Graphs = (props) => {
     <div className={styles.outer_container}>
       <div className={styles.container}>
         <div className={styles.graph_inner_container}>
-          <div className={styles.leaderboard_name}>
-            {sortedValues[user - 1].owner}
+          <div className={styles.header_arrow_text_container}>
+            <div
+              onClick={handleLeftArrowClick}
+              className={styles.left_arrow_container}
+            >
+              <Image priority src={left_arrow} alt="left_arrow" />
+            </div>
+            <div className={styles.centered_container}>
+              <div className={styles.leaderboard_name}>
+                {sortedValues[user - 1].owner}
+              </div>
+            </div>
           </div>
           <div className={styles.graph_header_leaderboard}>
             <Image priority src={blank_leaderboard} alt="Leaderboard header" />
