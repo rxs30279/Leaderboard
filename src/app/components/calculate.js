@@ -72,6 +72,7 @@ async function yahooAPI() {
       method: "GET",
       headers: {
         "x-api-key": apiKey,
+        cache: "no-store",
       },
     };
 
