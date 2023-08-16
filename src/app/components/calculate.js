@@ -70,9 +70,9 @@ async function yahooAPI() {
   for (const apiKey of apiKeys) {
     const options = {
       method: "GET",
+      cache: "no-cache",
       headers: {
         "x-api-key": apiKey,
-        cache: "no-store",
       },
     };
 
