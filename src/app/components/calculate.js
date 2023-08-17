@@ -62,7 +62,6 @@ export default async function Calc() {
 // API section
 
 async function yahooAPI() {
-  console.log("API_KEYS:", process.env.API_KEYS);
   const apiKeys = process.env.API_KEYS.split(",");
 
   const url =
@@ -84,7 +83,7 @@ async function yahooAPI() {
         return result;
       } else {
         console.error(
-          `API request failed with status: ${response.status} for this key: ${options}`
+          `API request failed with status: ${response.status} for this key: ${options.headers["x-api-key"]}`
         );
       }
     } catch (error) {
