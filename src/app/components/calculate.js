@@ -39,8 +39,13 @@ export default async function Calc() {
         (priceData) => priceData.symbol === symbol
       );
       if (priceData) {
-        const { price } = priceData;
-        return total + holding * price;
+        const price = Number(priceData.price);
+        if (!isNaN(price)) {
+          return total + holding * price;
+        } else {
+          console.log(`Invalid price data for symbol ${symbol}`);
+          return total;
+        }
       } else {
         console.log(`Price data not found for symbol ${symbol}`);
         return total;
