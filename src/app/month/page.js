@@ -130,62 +130,70 @@ export default async function MonthCalc() {
       calculatedShares={calculatedShares}
     />
   );
+}
 
-  async function fetchData(shares) {
-    const apiKeys = process.env.API_KEYS.split(",");
-    const url = `https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=${shares}`;
-    for (const apiKey of apiKeys) {
-      const options = {
-        method: "GET",
-        cache: "no-store",
-        headers: {
-          "x-api-key": apiKey,
-        },
-      };
+async function fetchData(shares) {
+  const apiKeys = process.env.API_KEYS.split(",");
 
-      try {
-        const response = await fetch(url, options);
+  const url = `https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=${shares}`;
+  for (const apiKey of apiKeys) {
+    const options = {
+      method: "GET",
+      cache: "no-store",
+      headers: {
+        "x-api-key": apiKey,
+      },
+    };
+    console.log("Trying this apiKey", apiKey);
+    try {
+      const response = await fetch(url, options);
+      if (response.ok) {
         const result = await response.json();
+        // console.log(result);
         return result;
-      } catch (error) {
-        console.error(error);
+      } else {
+        console.error(
+          `API request failed for monthly with status: ${response.status} for this key: ${options.headers["x-api-key"]}`
+        );
       }
+    } catch (error) {
+      console.log(error);
     }
   }
-  async function callApi() {
-    const companies = [
-      "GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L",
-      "IAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L",
-    ];
-    const allData = await Promise.all(companies.map(fetchData));
+}
+async function callApi() {
+  const companies = [
+    "GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L",
+    "IAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L",
+  ];
+  const allData = await Promise.all(companies.map(fetchData));
 
-    return allData;
-  }
-  async function main() {
-    const fetchedData = await callApi(); // Call the callApi function to get the data
-    // console.log(fetchedData); // Log the fetched data or use it as needed
-    const results = { ...fetchedData[0], ...fetchedData[1] };
-    const extractedInfo = Object.keys(results).map((symbol) => {
-      const symbolData = results[symbol];
-      const firstTime = new Date(symbolData.timestamp[0] * 1000);
-      const lastTime = new Date(
-        symbolData.timestamp[symbolData.timestamp.length - 1] * 1000
-      );
+  return allData;
+}
+async function main() {
+  const fetchedData = await callApi(); // Call the callApi function to get the data
+  // console.log(fetchedData); // Log the fetched data or use it as needed
+  const results = { ...fetchedData[0], ...fetchedData[1] };
+  const extractedInfo = Object.keys(results).map((symbol) => {
+    const symbolData = results[symbol];
+    const firstTime = new Date(symbolData.timestamp[0] * 1000);
+    const lastTime = new Date(
+      symbolData.timestamp[symbolData.timestamp.length - 1] * 1000
+    );
 
-      const firstTimestamp = `${firstTime.getDate()}/${
-        firstTime.getMonth() + 1
-      }/${firstTime.getFullYear()}`;
+    const firstTimestamp = `${firstTime.getDate()}/${
+      firstTime.getMonth() + 1
+    }/${firstTime.getFullYear()}`;
 
-      const lastTimestamp = `${lastTime.getDate()}/${
-        lastTime.getMonth() + 1
-      }/${lastTime.getFullYear()}`;
+    const lastTimestamp = `${lastTime.getDate()}/${
+      lastTime.getMonth() + 1
+    }/${lastTime.getFullYear()}`;
 
-      const firstClose = symbolData.close[0];
-      const lastClose = symbolData.close[symbolData.close.length - 1];
-      //console.log(symbol, firstTimestamp);
-      return { symbol, firstTimestamp, lastTimestamp, firstClose, lastClose };
-    });
-    // console.log(extractedInfo); // Log the extracted information
-    return extractedInfo; // Return the extracted information if needed
-  }
+    const firstClose = symbolData.close[0];
+    const lastClose = symbolData.close[symbolData.close.length - 1];
+    //console.log(symbol, firstTimestamp);
+    return { symbol, firstTimestamp, lastTimestamp, firstClose, lastClose };
+  });
+  // console.log(extractedInfo); // Log the extracted information
+  return extractedInfo; // Return the extracted information if needed
 }
