@@ -16,15 +16,14 @@
 }
 .header_leaderboard {
   position: fixed;
-  display: flex;
+  /* display: flex; */
   padding-top: 1.81rem;
   z-index: 100;
 }
-.calendar {
+.calendar_icon {
   position: absolute;
-  right: 5px;
-  top: 2px;
-
+  right: 15px;
+  top: 9px;
   animation: calendar 1.6s infinite;
 }
 
@@ -156,6 +155,13 @@
   z-index: 210;
   margin-left: -20px;
 }
+.monthly_name {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  z-index: 210;
+  margin-top: -4.4rem;
+}
 
 /* Graph */
 .graph_wrapper {
@@ -278,4 +284,13 @@
     padding-right: 0px;
     width: 100%;
   }
+}
+
+/* Monthly graph */
+/* This is also for the non monthly */
+.month_graph_header {
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  color: white;
+  font-size: 2rem;
 }

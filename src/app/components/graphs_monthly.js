@@ -1,40 +1,30 @@
-import { useState } from "react";
 import styles from "../page.module.css";
 import Image from "next/image";
 import investors from "./data/investors";
 import blank_leaderboard from "./images/blank_leaderboard.svg";
 import left_arrow from "./images/left_arrow.svg";
-import Chart from "./chart";
+import Chart from "./chart_monthly";
 
 const Graphs = (props) => {
-  const { sortedValues, stockPrices, user, onArrowClick } = props;
+  const { sortedValues, calculatedShares, user, onArrowClick } = props;
 
   const handleLeftArrowClick = () => {
     onArrowClick(false);
   };
 
-  // From the static file get this users list of company holdings
-  const ownersStock = investors.stocks.filter(
-    (ownersStock) => ownersStock.owners == sortedValues[user - 1].owner
-  );
-  // Combine the above list 'ownersStock' with the price information 'stockPrices' and place in one array
-  const combineArraysByKey = (ownersStock, stockPrices, symbol) => {
-    const comboArray = [];
-    for (let i = 0; i < ownersStock.length; i++) {
-      const item1 = ownersStock[i];
-      const matchingItem = stockPrices.find(
-        (item2) => item2[symbol] == item1[symbol]
-      );
-
-      if (matchingItem) {
-        comboArray.push({ ...item1, ...matchingItem });
-      }
-    }
-    return comboArray;
-  };
-  const combinedArray = combineArraysByKey(ownersStock, stockPrices, "symbol");
-  combinedArray.sort((a, b) => b.holding * b.price - a.holding * a.price);
-  console.log(combinedArray);
+  // Pull out the 'Owner' and their shares from the calculatedShares file calculated in the pages.js file
+  const ownerToFind = sortedValues[user - 1].owner; // get the owner from the front_page list of owners.
+  let filteredSharesInfo = [];
+  const ownerSharesInfo = calculatedShares.find(
+    (entry) => entry.owner === ownerToFind
+  )?.sharesInfo;
+  if (ownerSharesInfo) {
+    //remove any null objects from the array
+    filteredSharesInfo = ownerSharesInfo.filter((info) => info !== null);
+    // sort the objects in the array
+    filteredSharesInfo.sort((a, b) => b.gainLoss - a.gainLoss);
+  }
+  // console.log(filteredSharesInfo);
 
   return (
     <div className={styles.outer_container}>
@@ -56,26 +46,24 @@ const Graphs = (props) => {
           <div className={styles.graph_header_leaderboard}>
             <Image priority src={blank_leaderboard} alt="Leaderboard header" />
           </div>
-          <div className={styles.month_graph_header}>Total Value</div>
+          <div className={styles.month_graph_header}>Gains/Losses Month</div>
           <div className={styles.graph_wrapper}>
-            <Chart combinedArray={combinedArray} />
+            <Chart filteredSharesInfo={filteredSharesInfo} />
           </div>
           <table className={styles.table_pricing_data}>
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Price</th>
-                <th>52wk High</th>
-                <th>52wk Low</th>
+                <th>Symbol</th>
+                <th>{filteredSharesInfo[0].startData}</th>
+                <th>Todays Price</th>
               </tr>
             </thead>
             <tbody>
-              {combinedArray.map((entry, indexEntry) => (
+              {filteredSharesInfo.map((entry, indexEntry) => (
                 <tr key={indexEntry}>
-                  <td> {getFirstThreeWordsFromString(entry.shortName)}</td>
-                  <td>{entry.price.toFixed(0)}</td>
-                  <td>{entry.fiftyTwoWeekHigh.toFixed(0)}</td>
-                  <td>{entry.fiftyTwoWeekLow.toFixed(0)}</td>
+                  <td> {entry.symbol}</td>
+                  <td>{entry.firstPrice.toFixed(0)}</td>
+                  <td>{entry.closePrice.toFixed(0)}</td>
                 </tr>
               ))}
             </tbody>

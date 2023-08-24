@@ -2,6 +2,8 @@ import "./globals.css";
 import { Bubblegum_Sans } from "next/font/google";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
+// import Loading from "./loading";
+
 const Bubblegum = Bubblegum_Sans({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata = {
