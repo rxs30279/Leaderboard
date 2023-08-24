@@ -1,7 +1,5 @@
 import styles from "../page.module.css";
 import Image from "next/image";
-import Graphs from "./graph";
-
 // Images
 import position_marker_1 from "./images/Position_marker_1.svg";
 import position_marker_2 from "./images/Position_marker_2.svg";
@@ -25,7 +23,6 @@ export default function UserPanel(props) {
   const { sortedValues, stockPrices, onSubmittedChange } = props;
 
   const handleOnClick = (userIndex) => {
-    console.log("Button clicked in Userpanel");
     onSubmittedChange(userIndex);
   };
 
@@ -77,13 +74,15 @@ export default function UserPanel(props) {
                   height={35}
                 />
               </div>
-              <Image
-                priority
-                src={ownerImageMap[users.owner]}
-                alt="Individual's Avatar"
-                width={80}
-                height={90}
-              />
+              <div className={styles[`avatar_${userIndex}`]}>
+                <Image
+                  priority
+                  src={ownerImageMap[users.owner]}
+                  alt="Individual's Avatar"
+                  width={80}
+                  height={80}
+                />
+              </div>
               <div className={styles.left_scorecard_name}>{users.owner}</div>
             </div>
             <div className={styles.right_scorecard_wrapper}>

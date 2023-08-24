@@ -16,8 +16,15 @@
 }
 .header_leaderboard {
   position: fixed;
+  /* display: flex; */
   padding-top: 1.81rem;
   z-index: 100;
+}
+.calendar_icon {
+  position: absolute;
+  right: 15px;
+  top: 9px;
+  animation: calendar 1.6s infinite;
 }
 
 .inner_container {
@@ -35,6 +42,10 @@
   position: fixed;
   margin-top: 3rem;
 }
+.starburst_background {
+  opacity: 0.3;
+  z-index: 1;
+}
 
 .scorecard_container {
   display: flex;
@@ -47,6 +58,7 @@
   flex: 1;
   z-index: 20;
   scroll-snap-type: y mandatory;
+  /* opacity: 0.9; */
 }
 .scorecard_container::-webkit-scrollbar {
   display: none;
@@ -76,7 +88,8 @@
   padding-top: 12px;
 }
 .left_scorecard_name {
-  margin-left: -7px;
+  margin-left: -11px;
+  margin-right: 4px;
 }
 .right_scorecard_wrapper {
   display: flex;
@@ -98,12 +111,7 @@
   padding-top: 8px;
 }
 .scores_on_doors {
-  /* padding-right: 9px; */
   width: 100%;
-}
-.play_button {
-  z-index: 1;
-  /* padding-bottom: 9rem; */
 }
 
 /* Second page */
@@ -146,6 +154,13 @@
   font-size: 36px;
   z-index: 210;
   margin-left: -20px;
+}
+.monthly_name {
+  text-align: center;
+  color: white;
+  font-size: 36px;
+  z-index: 210;
+  margin-top: -4.4rem;
 }
 
 /* Graph */
@@ -203,6 +218,49 @@
 .table_pricing_data tbody tr:nth-child(odd) {
   background-color: #f138c3;
 }
+/* Animation */
+
+.avatar_0 {
+  z-index: 300;
+  animation: jump 1.6s infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(-0%, 10%) scale(1.05, 0.9);
+  }
+  50% {
+    transform: translate(-0%, -5%) scale(1, 1);
+  }
+  55% {
+    transform: translate(-0%, -5%) rotate(2deg);
+  }
+  60% {
+    transform: translate(-0%, -5%) rotate(-2deg);
+  }
+  65% {
+    transform: translate(-0%, -5%) rotate(2deg);
+  }
+  70% {
+    transform: translate(-0%, -5%) rotate(-2deg);
+  }
+  100% {
+    transform: translate(-0%, 10%) scale(1.05, 0.9);
+  }
+}
+
+@keyframes calendar {
+  0% {
+    transform: scale(1.1, 1.1);
+  }
+  50% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1.1, 1.1);
+  }
+}
 
 @media screen and (min-width: 400px) {
   .left_scorecard {
@@ -226,4 +284,13 @@
     padding-right: 0px;
     width: 100%;
   }
+}
+
+/* Monthly graph */
+/* This is also for the non monthly */
+.month_graph_header {
+  margin-top: 2rem;
+  margin-bottom: -3rem;
+  color: white;
+  font-size: 2rem;
 }

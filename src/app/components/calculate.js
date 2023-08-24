@@ -1,13 +1,14 @@
-import data from "./data/APIdata";
+//import data from "./data/APIdata";
 import investors from "./data/investors";
 import Front from "./front_page";
+// import APIdata from "./data/APIdata.json";
 
 export default async function Calc() {
   //Extract the price data for each stock
 
   const dataAPI = await yahooAPI();
-  // console.log(dataAPI.quoteResponse.result[0]);
-  const stockPrices = dataAPI.quoteResponse.result.map((entry) => {
+
+  let stockPrices = dataAPI.quoteResponse.result.map((entry) => {
     return {
       symbol: entry.symbol,
       price: entry.regularMarketPrice,
@@ -16,7 +17,8 @@ export default async function Calc() {
       shortName: entry.shortName,
     };
   });
-  // console.log(stockPrices);
+  // Filter out stocks with no attached price information.
+  stockPrices = stockPrices.filter((entry) => entry.price != null);
 
   // Use the investors file to identify which stocks are associated with wich investor/
   const ownersData = {};
@@ -57,6 +59,7 @@ export default async function Calc() {
   const sortedValues = calculatedHoldings.sort(
     (a, b) => b.totalValue - a.totalValue
   );
+  // console.log(sortedValues);
   return (
     <>
       <Front sortedValues={sortedValues} stockPrices={stockPrices} />

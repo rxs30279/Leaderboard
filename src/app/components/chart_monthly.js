@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const barColors = [
+let barColors = [
   "#FF3DD3",
   "#FAFF0B",
   "#3CFF0F",
@@ -19,12 +19,12 @@ const barColors = [
 ];
 
 function BarPlot(props) {
-  const { combinedArray } = props;
-  const rechartsData = combinedArray.map((item, index) => ({
+  const { filteredSharesInfo } = props;
+  const rechartsData = filteredSharesInfo.map((item, index) => ({
     symbol: item.symbol.slice(0, -2),
-    totalValue: Number((item.holding * item.price).toFixed(2)),
+    gainLoss: item.gainLoss,
   }));
-  console.log(rechartsData);
+  //   console.log(rechartsData);
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
@@ -41,7 +41,7 @@ function BarPlot(props) {
         <XAxis dataKey="symbol" stroke={"white"} />
         <YAxis type="number" stroke={"white"} />
         <Tooltip />
-        <Bar dataKey="totalValue" fill="#FF3DD3">
+        <Bar dataKey="gainLoss" fill="#FF3DD3">
           {rechartsData.map((entry, index) => {
             const color = barColors[index % barColors.length];
             return <Cell fill={color} />;
