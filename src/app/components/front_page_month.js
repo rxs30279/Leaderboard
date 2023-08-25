@@ -9,7 +9,7 @@ import Link from "next/link";
 import blank_leaderboard from "./images/blank_leaderboard.svg";
 import starConstellation from "./images/starConstellation.svg";
 import starburst_background from "./images/starburst_background.svg";
-import strawberry from "./images/strawberry.svg";
+import button from "./images/playButton.svg";
 
 export default function Front_month(props) {
   const { sortedValues, calculatedShares } = props;
@@ -36,10 +36,10 @@ export default function Front_month(props) {
           <div className={styles.calendar_icon}>
             <Link href="/">
               <Image
-                src={strawberry}
-                alt="strawberry gif"
-                height={40}
-                width={40}
+                src={button}
+                alt="play button image"
+                height={60}
+                width={60}
               />
             </Link>
           </div>

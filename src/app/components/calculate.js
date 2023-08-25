@@ -18,8 +18,9 @@ export default async function Calc() {
     };
   });
   // Filter out stocks with no attached price information.
-  stockPrices = stockPrices.filter((entry) => entry.price != null);
+  updateSymbolEntry("KAPE.L", 285, 215, 306, "Inserted Kape Ltd");
 
+  stockPrices = stockPrices.filter((entry) => entry.price != null);
   // Use the investors file to identify which stocks are associated with wich investor/
   const ownersData = {};
   investors.stocks.forEach((stock) => {
@@ -59,7 +60,19 @@ export default async function Calc() {
   const sortedValues = calculatedHoldings.sort(
     (a, b) => b.totalValue - a.totalValue
   );
-  // console.log(sortedValues);
+  function updateSymbolEntry(symbol, price, low, high, shortName) {
+    const index = stockPrices.findIndex((entry) => entry.symbol === symbol);
+    if (index !== -1) {
+      stockPrices[index].price = price;
+      stockPrices[index].fiftyTwoWeekLow = low;
+      stockPrices[index].fiftyTwoWeekHigh = high;
+      stockPrices[index].shortName = shortName;
+      console.log(`Updated ${symbol} entry`);
+    } else {
+      console.log(`${symbol} not found in dataArray`);
+    }
+  }
+
   return (
     <>
       <Front sortedValues={sortedValues} stockPrices={stockPrices} />

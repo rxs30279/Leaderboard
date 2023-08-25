@@ -22,9 +22,9 @@
 }
 .calendar_icon {
   position: absolute;
-  right: 15px;
-  top: 9px;
-  animation: calendar 1.6s infinite;
+  right: 8px;
+  top: 15px;
+  animation: calendar 3s infinite;
 }
 
 .inner_container {
@@ -253,7 +253,7 @@
   0% {
     transform: scale(1.1, 1.1);
   }
-  50% {
+  30% {
     transform: scale(1, 1);
   }
 
