@@ -135,13 +135,15 @@ export default async function MonthCalc() {
 async function fetchData(shares) {
   const apiKeys = process.env.API_KEYS.split(",");
 
-  const url = `https://yfapi.net/v8/finance/spark?interval=1d&range=1mo&symbols=${shares}`;
+  const url = `https://yh-finance.p.rapidapi.com/market/get-spark?symbols=${shares}&interval=1d&range=1mo`;
+
   for (const apiKey of apiKeys) {
     const options = {
       method: "GET",
       cache: "no-store",
       headers: {
-        "x-api-key": apiKey,
+        "X-RapidAPI-Key": "aa5eb0538fmshdf5108ad9fcd0b1p1160ffjsn7be0e06c7f05",
+        "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
       },
     };
     console.log("Trying this apiKey", apiKey);

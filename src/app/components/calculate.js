@@ -86,13 +86,14 @@ async function yahooAPI() {
   const apiKeys = process.env.API_KEYS.split(",");
 
   const url =
-    "https://yfapi.net/v6/finance/quote?region=GB&lang=en&symbols=GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L%2CIAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L";
+    "https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=GB&symbols=GFI%2CRR.L%2CKAPE.L%2CSCT.L%2CGAW.L%2CBYIT.L%2CCVSG.L%2CSGE.L%2COXB.L%2CSHOE.L%2CKMR.L%2CITV.L%2CDRX.L%2CCRW.L%2CCEY.L%2CPSN.L%2CSTAN.L%2CLLOY.L%2CSDP.L%2CHL.L%2CIAG.L%2CFORT.L%2CGLEN.L%2CSMDS.L%2CWOSG.L%2CCCL.L%2CSMT.L%2CSOM.L%2CAVCT.L%2CPMI.L%2CCPH2.L%2CCWR.L%2CAAL.L%2CCLX.L%2COCDO.L%2CWBI.L";
   for (const apiKey of apiKeys) {
     const options = {
       method: "GET",
       cache: "no-store",
       headers: {
-        "x-api-key": apiKey,
+        "X-RapidAPI-Key": "aa5eb0538fmshdf5108ad9fcd0b1p1160ffjsn7be0e06c7f05",
+        "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
       },
     };
 
