@@ -92,7 +92,7 @@ async function yahooAPI() {
       method: "GET",
       cache: "no-store",
       headers: {
-        "X-RapidAPI-Key": "aa5eb0538fmshdf5108ad9fcd0b1p1160ffjsn7be0e06c7f05",
+        "X-RapidAPI-Key": apiKey,
         "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
       },
     };
@@ -105,7 +105,7 @@ async function yahooAPI() {
         return result;
       } else {
         console.error(
-          `API request failed with status: ${response.status} for this key: ${options.headers["x-api-key"]}`
+          `API request failed with status: ${response.status} for this key: ${options.headers["X-RapidAPI-Key"]}`
         );
       }
     } catch (error) {
