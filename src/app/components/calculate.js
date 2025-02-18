@@ -18,7 +18,7 @@ export default async function Calc() {
     };
   });
   // Filter out stocks with no attached price information.
-  updateSymbolEntry("KAPE.L", 285, 215, 306, "Inserted Kape Ltd");
+  // updateSymbolEntry("KAPE.L", 285, 215, 306, "Inserted Kape Ltd");
 
   stockPrices = stockPrices.filter((entry) => entry.price != null);
   // Use the investors file to identify which stocks are associated with wich investor/
