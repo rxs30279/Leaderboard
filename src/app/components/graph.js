@@ -89,10 +89,7 @@ const Graphs = (props) => {
 export default Graphs;
 
 function getFirstThreeWordsFromString(str) {
-  const words = str.split(" ");
-  if (words.length >= 3) {
-    return words.slice(0, 3).join(" ");
-  } else {
-    return str; // Return the original string if it has fewer than three words
-  }
+  const safeStr = String(str); // Coerce to string
+  const words = safeStr.split(" ");
+  return words.length >= 3 ? words.slice(0, 3).join(" ") : safeStr;
 }
