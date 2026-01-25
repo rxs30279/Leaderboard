@@ -121,9 +121,9 @@
       "holding": 5.1020408163265305
     },
     {
-      "symbol": "RR.L",
+      "symbol": "MKS.L",
       "owners": "Richard",
-      "holding": 0.7980845969672785
+      "holding": 2.770083102493075
     },
     {
       "symbol": "MPAL.L",
@@ -149,6 +149,31 @@
       "symbol": "SCT.L",
       "owners": "Patti",
       "holding": 0.7163323782234957
+    },
+    {
+      "symbol": "CHRT.L",
+      "owners": "Adrian",
+      "holding": 0.8665511265164645
+    },
+    {
+      "symbol": "SOLI.L",
+      "owners": "Adrian",
+      "holding": 6.153846153846154
+    },
+    {
+      "symbol": "SWG.L",
+      "owners": "Adrian",
+      "holding": 21.27659574468085
+    },
+    {
+      "symbol": "SALT.L",
+      "owners": "Adrian",
+      "holding": 17.699115044247787
+    },
+    {
+      "symbol": "CBOX.L",
+      "owners": "Adrian",
+      "holding": 5.063291139240507
     }
   ]
 }
