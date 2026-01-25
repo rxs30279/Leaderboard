@@ -1,180 +1,154 @@
 {
-    "stocks": [
-      {
-        "symbol": "CRW.L",
-        "owners": "Richard",
-        "holding": 0.534759358
-      },
-      {
-        "symbol": "JET2.L",
-        "owners": "Chris",
-        "holding": 0.654450262
-      },
-      {
-        "symbol": "BA.L",
-        "owners": "Adrian",
-        "holding": 0.844951415
-      },
-      {
-        "symbol": "BUR.L",
-        "owners": "Richard",
-        "holding": 0.841750842
-      },
-      {
-        "symbol": "CRDA.L",
-        "owners": "Alan",
-        "holding": 0.324780773
-      },
-      {
-        "symbol": "CRDA.L",
-        "owners": "Chris",
-        "holding": 0.324780773
-      },
-      {
-        "symbol": "CCL.L",
-        "owners": "Graham",
-        "holding": 0.521376434
-      },
-      {
-        "symbol": "CCL.L",
-        "owners": "Adrian",
-        "holding": 0.521376434
-      },
-      {
-        "symbol": "SSON.L",
-        "owners": "Alan",
-        "holding": 0.647668394
-      },
-      {
-        "symbol": "STJ.L",
-        "owners": "Les",
-        "holding": 0.896860987
-      },
-      {
-        "symbol": "BP.L",
-        "owners": "Richard",
-        "holding": 2.162863631
-      },
-      {
-        "symbol": "EZJ.L",
-        "owners": "Les",
-        "holding": 1.901863827
-      },
-      {
-        "symbol": "BRBY.L",
-        "owners": "Patti",
-        "holding": 0.851788756
-      },
-      {
-        "symbol": "PSN.L",
-        "owners": "Alan",
-        "holding": 0.796495420
-      },
-      {
-        "symbol": "TET.L",
-        "owners": "Chris",
-        "holding": 2.512562814
-      },
-      {
-        "symbol": "AIR.PA",
-        "owners": "Alan",
-        "holding": 6.327512022
-      },
-      {
-        "symbol": "AVCT.L",
-        "owners": "Adrian",
-        "holding": 22.727272727
-      },
-      {
-        "symbol": "CLBS.L",
-        "owners": "Graham",
-        "holding": 4.608294931
-      },
-      {
-        "symbol": "DIA.L",
-        "owners": "Patti",
-        "holding": 8.000000000
-      },
-      {
-        "symbol": "FNX.L",
-        "owners": "Richard",
-        "holding": 4.608294931
-      },
-      {
-        "symbol": "GFI",
-        "owners": "Les",
-        "holding": 50.761421320
-      },
-      {
-        "symbol": "GRG.L",
-        "owners": "Richard",
-        "holding": 0.477099237
-      },
-      {
-        "symbol": "LLOY.L",
-        "owners": "Adrian",
-        "holding": 15.878056526
-      },
-      {
-        "symbol": "NWG.L",
-        "owners": "Patti",
-        "holding": 2.260397830
-      },
-      {
-        "symbol": "RKH.L",
-        "owners": "Graham",
-        "holding": 26.954177898
-      },
-      {
-        "symbol": "RR.L",
-        "owners": "Adrian",
-        "holding": 1.644195988
-      },
-      {
-        "symbol": "RR.L",
-        "owners": "Patti",
-        "holding": 1.644195988
-      },
-      {
-        "symbol": "SCGL.L",
-        "owners": "Les",
-        "holding": 333.333333333
-      },
-      {
-        "symbol": "BTC.L",
-        "owners": "Les",
-        "holding": 52.631578947
-      },
-      {
-        "symbol": "WBI.L",
-        "owners": "Alan",
-        "holding": 20833.333333333
-
-      },
-      {
-        "symbol": "BARC.L",
-        "owners": "Graham",
-        "holding": 3.286230693
-      },
-      {
-        "symbol": "TRST.L",
-        "owners": "Graham",
-        "holding": 2.861230329
-      },
-      {
-        "symbol": "CHRT.L",
-        "owners": "Chris",
-        "holding": 0.925925926
-      },
-      {
-        "symbol": "DGE.L",
-        "owners": "Chris",
-        "holding": 0.454338937
-      },
-      {
-        "symbol": "IPC.L",
-        "owners": "Patti",
-        "holding": 0.226244344
-      }
-    ]
-  }
+  "stocks": [
+    {
+      "symbol": "STJ.L",
+      "owners": "Les",
+      "holding": 0.670465973851827
+    },
+    {
+      "symbol": "WSBN.L",
+      "owners": "Les",
+      "holding": 12.269938650306749
+    },
+    {
+      "symbol": "EDV.L",
+      "owners": "Les",
+      "holding": 0.22904260192395787
+    },
+    {
+      "symbol": "SCT.L",
+      "owners": "Les",
+      "holding": 0.7163323782234957
+    },
+    {
+      "symbol": "BARC.L",
+      "owners": "Les",
+      "holding": 2.082032116209517
+    },
+    {
+      "symbol": "QQ.L",
+      "owners": "Alan",
+      "holding": 1.9157088122605364
+    },
+    {
+      "symbol": "MRCH.L",
+      "owners": "Alan",
+      "holding": 1.6233766233766234
+    },
+    {
+      "symbol": "FCSS.L",
+      "owners": "Alan",
+      "holding": 3.076923076923077
+    },
+    {
+      "symbol": "ASL.L",
+      "owners": "Alan",
+      "holding": 0.6045949214026602
+    },
+    {
+      "symbol": "REL.L",
+      "owners": "Alan",
+      "holding": 0.3423485107839781
+    },
+    {
+      "symbol": "ING.L",
+      "owners": "Chris",
+      "holding": 9.66183574879227
+    },
+    {
+      "symbol": "GAMA.L",
+      "owners": "Chris",
+      "holding": 1.0869565217391304
+    },
+    {
+      "symbol": "CHRT.L",
+      "owners": "Chris",
+      "holding": 0.8665511265164645
+    },
+    {
+      "symbol": "CTEC.L",
+      "owners": "Chris",
+      "holding": 4.273504273504273
+    },
+    {
+      "symbol": "BOKU.L",
+      "owners": "Chris",
+      "holding": 4.62962962962963
+    },
+    {
+      "symbol": "BAB.L",
+      "owners": "Graham",
+      "holding": 0.687757909215956
+    },
+    {
+      "symbol": "RR.L",
+      "owners": "Graham",
+      "holding": 0.7980845969672785
+    },
+    {
+      "symbol": "BA.L",
+      "owners": "Graham",
+      "holding": 0.493339911198816
+    },
+    {
+      "symbol": "MRO.L",
+      "owners": "Graham",
+      "holding": 1.5748031496062993
+    },
+    {
+      "symbol": "QQ.L",
+      "owners": "Graham",
+      "holding": 1.9157088122605364
+    },
+    {
+      "symbol": "YCA.L",
+      "owners": "Richard",
+      "holding": 1.4716703458425313
+    },
+    {
+      "symbol": "FRES.L",
+      "owners": "Richard",
+      "holding": 0.2399232245681382
+    },
+    {
+      "symbol": "BA.L",
+      "owners": "Richard",
+      "holding": 0.493339911198816
+    },
+    {
+      "symbol": "FTC.L",
+      "owners": "Richard",
+      "holding": 5.1020408163265305
+    },
+    {
+      "symbol": "RR.L",
+      "owners": "Richard",
+      "holding": 0.7980845969672785
+    },
+    {
+      "symbol": "MPAL.L",
+      "owners": "Patti",
+      "holding": 190.47619047619048
+    },
+    {
+      "symbol": "SGE.L",
+      "owners": "Patti",
+      "holding": 0.9718172983479106
+    },
+    {
+      "symbol": "GGP.L",
+      "owners": "Patti",
+      "holding": 1.438434957481271
+    },
+    {
+      "symbol": "DIA.L",
+      "owners": "Patti",
+      "holding": 3.278688524590164
+    },
+    {
+      "symbol": "SCT.L",
+      "owners": "Patti",
+      "holding": 0.7163323782234957
+    }
+  ]
+}
