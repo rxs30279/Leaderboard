@@ -37,6 +37,7 @@ export default function UserPanel(props) {
     Patti: pattiAvatar,
     Peter: peterAvatar,
     Richard: richardAvatar,
+    Paul: paulAvatar,
   };
 
   // build an array of position marker images
