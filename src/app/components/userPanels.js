@@ -16,7 +16,6 @@ import pattiAvatar from "./images/pattiAvatar.svg";
 import lesAvatar from "./images/lesAvatar.svg";
 import richardAvatar from "./images/richardAvatar.png";
 import chrisAvatar from "./images/chrisAvatar.png";
-import peterAvatar from "./images/peterAvatar.png";
 import paulAvatar from "./images/paulAvatar.png";
 import coin from "./images/coin.svg";
 
@@ -35,7 +34,6 @@ export default function UserPanel(props) {
     Graham: grahamAvatar,
     Les: lesAvatar,
     Patti: pattiAvatar,
-    Peter: peterAvatar,
     Richard: richardAvatar,
     Paul: paulAvatar,
   };
