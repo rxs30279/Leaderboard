@@ -16,7 +16,7 @@ import pattiAvatar from "./images/pattiAvatar.svg";
 import lesAvatar from "./images/lesAvatar.svg";
 import richardAvatar from "./images/richardAvatar.png";
 import chrisAvatar from "./images/chrisAvatar.png";
-import paulAvatar from "./images/paulAvatar.png";
+import paulAvatar from "./images/paulAvatar.svg";
 import coin from "./images/coin.svg";
 
 export default function UserPanel(props) {
