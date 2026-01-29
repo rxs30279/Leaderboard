@@ -3,177 +3,202 @@
     {
       "symbol": "STJ.L",
       "owners": "Les",
-      "holding": 0.670465973851827
+      "holding": 0.6508298080052066
     },
     {
       "symbol": "WSBN.L",
       "owners": "Les",
-      "holding": 12.269938650306749
+      "holding": 11.834319526627219
     },
     {
       "symbol": "EDV.L",
       "owners": "Les",
-      "holding": 0.22904260192395787
+      "holding": 0.20990764063811923
     },
     {
       "symbol": "SCT.L",
       "owners": "Les",
-      "holding": 0.7163323782234957
+      "holding": 0.7052186177715092
     },
     {
       "symbol": "BARC.L",
       "owners": "Les",
-      "holding": 2.082032116209517
+      "holding": 2.0680385177222846
     },
     {
       "symbol": "QQ.L",
       "owners": "Alan",
-      "holding": 1.9157088122605364
+      "holding": 1.942120908880343
     },
     {
       "symbol": "MRCH.L",
       "owners": "Alan",
-      "holding": 1.6233766233766234
+      "holding": 1.597444089456869
     },
     {
       "symbol": "FCSS.L",
       "owners": "Alan",
-      "holding": 3.076923076923077
+      "holding": 3.048780487804878
     },
     {
       "symbol": "ASL.L",
       "owners": "Alan",
-      "holding": 0.6045949214026602
+      "holding": 0.5945656611476525
     },
     {
       "symbol": "REL.L",
       "owners": "Alan",
-      "holding": 0.3423485107839781
+      "holding": 0.37936267071320184
     },
     {
       "symbol": "ING.L",
       "owners": "Chris",
-      "holding": 9.66183574879227
+      "holding": 9.828009828009828
     },
     {
       "symbol": "GAMA.L",
       "owners": "Chris",
-      "holding": 1.0869565217391304
+      "holding": 1.1098779134295227
     },
     {
       "symbol": "CHRT.L",
       "owners": "Chris",
-      "holding": 0.8665511265164645
+      "holding": 0.8074935241325926
     },
     {
       "symbol": "CTEC.L",
       "owners": "Chris",
-      "holding": 4.273504273504273
+      "holding": 4.401408509824088
     },
     {
       "symbol": "BOKU.L",
       "owners": "Chris",
-      "holding": 4.62962962962963
+      "holding": 4.825786855975122
     },
     {
       "symbol": "BAB.L",
       "owners": "Graham",
-      "holding": 0.687757909215956
+      "holding": 0.6770480704129993
     },
     {
       "symbol": "RR.L",
       "owners": "Graham",
-      "holding": 0.7980845969672785
+      "holding": 0.8193363375665711
     },
     {
       "symbol": "BA.L",
       "owners": "Graham",
-      "holding": 0.493339911198816
+      "holding": 0.5041593143433325
     },
     {
       "symbol": "MRO.L",
       "owners": "Graham",
-      "holding": 1.5748031496062993
+      "holding": 1.59357465718303
     },
     {
       "symbol": "QQ.L",
       "owners": "Graham",
-      "holding": 1.9157088122605364
+      "holding": 1.942120908880343
     },
     {
       "symbol": "YCA.L",
       "owners": "Richard",
-      "holding": 1.4716703458425313
+      "holding": 1.3610071452875128
     },
     {
       "symbol": "FRES.L",
       "owners": "Richard",
-      "holding": 0.2399232245681382
+      "holding": 0.23923444976076555
     },
     {
       "symbol": "BA.L",
       "owners": "Richard",
-      "holding": 0.493339911198816
+      "holding": 0.5041593143433325
     },
     {
       "symbol": "FTC.L",
       "owners": "Richard",
-      "holding": 5.1020408163265305
+      "holding": 5.483959694034278
     },
     {
       "symbol": "MKS.L",
       "owners": "Richard",
-      "holding": 2.770083102493075
+      "holding": 2.7475153466105313
     },
     {
       "symbol": "MPAL.L",
       "owners": "Patti",
-      "holding": 190.47619047619048
+      "holding": 178.9709141712758
     },
     {
       "symbol": "SGE.L",
       "owners": "Patti",
-      "holding": 0.9718172983479106
+      "holding": 1.0360546905852135
     },
     {
       "symbol": "GGP.L",
       "owners": "Patti",
-      "holding": 1.438434957481271
+      "holding": 1.443001443001443
     },
     {
       "symbol": "DIA.L",
       "owners": "Patti",
-      "holding": 3.278688524590164
+      "holding": 2.961243122054673
     },
     {
       "symbol": "SCT.L",
       "owners": "Patti",
-      "holding": 0.7163323782234957
+      "holding": 0.7052186177715092
     },
     {
       "symbol": "CHRT.L",
       "owners": "Adrian",
-      "holding": 0.8665511265164645
+      "holding": 0.8074935241325926
     },
     {
       "symbol": "SOLI.L",
       "owners": "Adrian",
-      "holding": 6.153846153846154
+      "holding": 6.25
     },
     {
       "symbol": "SWG.L",
       "owners": "Adrian",
-      "holding": 21.27659574468085
+      "holding": 21.00840403479581
     },
     {
       "symbol": "SALT.L",
       "owners": "Adrian",
-      "holding": 17.699115044247787
+      "holding": 16.041065087461146
     },
     {
       "symbol": "CBOX.L",
       "owners": "Adrian",
-      "holding": 5.063291139240507
+      "holding": 5.069708491761724
+    },
+    {
+      "symbol": "MKS.L",
+      "owners": "Paul",
+      "holding": 2.7475153466105313
+    },
+    {
+      "symbol": "BWY.L",
+      "owners": "Paul",
+      "holding": 0.36258158085569253
+    },
+    {
+      "symbol": "MTO.L",
+      "owners": "Paul",
+      "holding": 5.9880239520958085
+    },
+    {
+      "symbol": "VIC.L",
+      "owners": "Paul",
+      "holding": 12.41454181265078
+    },
+    {
+      "symbol": "ENT.L",
+      "owners": "Paul",
+      "holding": 1.5888146825716223
     }
   ]
 }
