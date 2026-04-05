@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node -e \"const yf = require\\('yahoo-finance2'\\); console.log\\(typeof yf.chart\\)\")",
+      "Bash(node -e \"const d = require\\('./src/app/components/data/investors.json'\\); const syms = [...new Set\\(d.stocks.map\\(s=>s.symbol\\)\\)]; console.log\\(syms.slice\\(0,10\\).join\\(', '\\)\\);\")",
+      "Bash(node -e \"const d = require\\('./src/app/components/data/investors.json'\\); const syms = [...new Set\\(d.stocks.map\\(s=>s.symbol\\)\\)]; console.log\\(JSON.stringify\\(syms\\)\\);\")",
+      "Bash(node -e \"const d = require\\('./src/app/components/data/investors.json'\\); const stj = d.stocks.filter\\(s=>s.symbol==='STJ.L'\\); console.log\\(JSON.stringify\\(stj\\)\\);\")"
+    ]
+  }
+}

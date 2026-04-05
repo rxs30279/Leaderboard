@@ -24,7 +24,6 @@ function BarPlot(props) {
     symbol: item.symbol.slice(0, -2),
     totalValue: Number((item.holding * item.price).toFixed(2)),
   }));
-  console.log(rechartsData);
   return (
     <ResponsiveContainer width="100%" height="100%">
       <BarChart

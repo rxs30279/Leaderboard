@@ -1,27 +1,26 @@
-//import data from "./data/APIdata";
 import investors from "./data/investors";
 import Front from "./front_page";
-// import APIdata from "./data/APIdata.json";
+import YahooFinance from "yahoo-finance2";
+const yahooFinance = new YahooFinance();
+
+const SYMBOLS = [...new Set(investors.stocks.map((s) => s.symbol))];
 
 export default async function Calc() {
-  //Extract the price data for each stock
+  const quotes = await fetchQuotes();
 
-  const dataAPI = await yahooAPI();
+  if (!quotes) {
+    return <div>Unable to fetch stock data. Please try again later.</div>;
+  }
 
-  let stockPrices = dataAPI.quoteResponse.result.map((entry) => {
-    return {
-      symbol: entry.symbol,
-      price: entry.regularMarketPrice,
-      fiftyTwoWeekLow: entry.fiftyTwoWeekLow,
-      fiftyTwoWeekHigh: entry.fiftyTwoWeekHigh,
-      shortName: entry.shortName,
-    };
-  });
-  // Filter out stocks with no attached price information.
-  // updateSymbolEntry("KAPE.L", 285, 215, 306, "Inserted Kape Ltd");
-
+  let stockPrices = quotes.map((entry) => ({
+    symbol: entry.symbol,
+    price: entry.regularMarketPrice,
+    fiftyTwoWeekLow: entry.fiftyTwoWeekLow,
+    fiftyTwoWeekHigh: entry.fiftyTwoWeekHigh,
+    shortName: entry.shortName,
+  }));
   stockPrices = stockPrices.filter((entry) => entry.price != null);
-  // Use the investors file to identify which stocks are associated with wich investor/
+
   const ownersData = {};
   investors.stocks.forEach((stock) => {
     const { owners, symbol, holding } = stock;
@@ -30,7 +29,6 @@ export default async function Calc() {
     }
     ownersData[owners].push({ symbol, holding });
   });
-  // console.log(ownersData);
 
   // Calculate holdings value for each individual
   const calculatedHoldings = [];
@@ -38,9 +36,7 @@ export default async function Calc() {
     const stocksOwned = ownersData[owner];
     const totalValue = stocksOwned.reduce((total, stock) => {
       const { symbol, holding } = stock;
-      const priceData = stockPrices.find(
-        (priceData) => priceData.symbol === symbol
-      );
+      const priceData = stockPrices.find((p) => p.symbol === symbol);
       if (priceData) {
         const price = Number(priceData.price);
         if (!isNaN(price)) {
@@ -56,22 +52,10 @@ export default async function Calc() {
     }, 0);
     calculatedHoldings.push({ owner, totalValue });
   }
-  // console.log(calculatedHoldings);
+
   const sortedValues = calculatedHoldings.sort(
     (a, b) => b.totalValue - a.totalValue
   );
-  function updateSymbolEntry(symbol, price, low, high, shortName) {
-    const index = stockPrices.findIndex((entry) => entry.symbol === symbol);
-    if (index !== -1) {
-      stockPrices[index].price = price;
-      stockPrices[index].fiftyTwoWeekLow = low;
-      stockPrices[index].fiftyTwoWeekHigh = high;
-      stockPrices[index].shortName = shortName;
-      console.log(`Updated ${symbol} entry`);
-    } else {
-      console.log(`${symbol} not found in dataArray`);
-    }
-  }
 
   return (
     <>
@@ -80,40 +64,11 @@ export default async function Calc() {
   );
 }
 
-// API section
-
-async function yahooAPI() {
-  const apiKeys = process.env.API_KEYS.split(",");
-
-  const url = 
-    "https://yh-finance.p.rapidapi.com/market/v2/get-quotes?region=GB&symbols=STJ.L%2CWSBN.L%2CEDV.L%2CSCT.L%2CBARC.L%2CQQ.L%2CMRCH.L%2CFCSS.L%2CASL.L%2CREL.L%2CING.L%2CGAMA.L%2CCHRT.L%2CCTEC.L%2CBOKU.L%2CBAB.L%2CRR.L%2CBA.L%2CMRO.L%2CYCA.L%2CFRES.L%2CFTC.L%2CMKS.L%2CMPAL.L%2CSGE.L%2CGGP.L%2CDIA.L%2CSOLI.L%2CSWG.L%2CSALT.L%2CCBOX.L%2CBWY.L%2CMTO.L%2CVIC.L%2CENT.L";
-   
-
-  for (const apiKey of apiKeys) {
-    const options = {
-      method: "GET",
-      cache: "no-store",
-      headers: {
-        "X-RapidAPI-Key": apiKey,
-        "X-RapidAPI-Host": "yh-finance.p.rapidapi.com",
-      },
-    };
-
-    try {
-      const response = await fetch(url, options);
-      if (response.ok) {
-        const result = await response.json();
-        // console.log(result);
-        return result;
-      } else {
-        console.error(
-          `API request failed with status: ${response.status} for this key: ${options.headers["X-RapidAPI-Key"]}`
-        );
-      }
-    } catch (error) {
-      console.log(error);
-    }
+async function fetchQuotes() {
+  try {
+    return await yahooFinance.quote(SYMBOLS);
+  } catch (error) {
+    console.error("[Yahoo] quote error:", error.message);
+    return null;
   }
-
-  console.log("All API keys failed. Unable to get a successful response.");
 }

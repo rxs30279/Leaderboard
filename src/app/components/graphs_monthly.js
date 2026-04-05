@@ -54,7 +54,7 @@ const Graphs = (props) => {
             <thead>
               <tr>
                 <th>Symbol</th>
-                <th>{filteredSharesInfo[0].startData}</th>
+                <th>{filteredSharesInfo[0]?.startData}</th>
                 <th>Todays Price</th>
               </tr>
             </thead>
@@ -75,12 +75,3 @@ const Graphs = (props) => {
 };
 
 export default Graphs;
-
-function getFirstThreeWordsFromString(str) {
-  const words = str.split(" ");
-  if (words.length >= 3) {
-    return words.slice(0, 3).join(" ");
-  } else {
-    return str; // Return the original string if it has fewer than three words
-  }
-}

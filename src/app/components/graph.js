@@ -34,7 +34,6 @@ const Graphs = (props) => {
   };
   const combinedArray = combineArraysByKey(ownersStock, stockPrices, "symbol");
   combinedArray.sort((a, b) => b.holding * b.price - a.holding * a.price);
-  console.log(combinedArray);
 
   return (
     <div className={styles.outer_container}>
