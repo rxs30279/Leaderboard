@@ -2,7 +2,7 @@
 
 A real-time stock portfolio leaderboard for a private investment club. Members each hold a selection of LSE-listed stocks with a fixed notional investment, and the app ranks them by current portfolio value and monthly gain/loss.
 
-![Leaderboard screenshot](pics/Leaderboard.pnx)
+![Leaderboard screenshot](pics/Leaderboard.png)
 
 ## Features
 
